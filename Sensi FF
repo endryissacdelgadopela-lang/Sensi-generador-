@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Generador de Sensibilidad FF</title>
+
+<style>
+body{
+    background:#111827;
+    color:white;
+    font-family:Arial;
+    text-align:center;
+    padding:20px;
+}
+
+.box{
+    background:#1f2937;
+    padding:20px;
+    border-radius:15px;
+    max-width:400px;
+    margin:auto;
+}
+
+button{
+    background:#00ffff;
+    border:none;
+    padding:12px 20px;
+    border-radius:10px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.result{
+    margin-top:20px;
+    text-align:left;
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+<h1>🔥 Generador Sensi FF 🔥</h1>
+
+<button onclick="generar()">
+Generar Sensibilidad
+</button>
+
+<div class="result" id="resultado"></div>
+</div>
+
+<script>
+function random(min,max){
+ return Math.floor(Math.random()*(max-min+1))+min;
+}
+
+function generar(){
+
+let general=random(90,100);
+let punto=random(85,100);
+let mira2x=random(75,95);
+let mira4x=random(65,85);
+let awm=random(20,50);
+let libre=random(70,100);
+
+document.getElementById("resultado").innerHTML=`
+<h3>📱 Sensibilidad Generada</h3>
+
+<p>General: ${general}</p>
+<p>Punto Rojo: ${punto}</p>
+<p>Mira 2X: ${mira2x}</p>
+<p>Mira 4X: ${mira4x}</p>
+<p>AWM: ${awm}</p>
+<p>Cámara Libre: ${libre}</p>
+`;
+}
+</script>
+
+</body>
+</html>
